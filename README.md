@@ -1,23 +1,23 @@
-# 🐾 Kindred Take-Home Project: Pet Swapping Mini-App
+# Kindred Take-Home Project: Pet Swapping Mini-App
 
 Welcome! Thank you for taking the time to complete our take-home challenge.
 This is meant to simulate a real (but lighthearted) Kindred product experience, with a twist: instead of homes, you'll be helping people find pet-sitting buddies!
 
-## ✨ Project Brief
+## Project Brief
 
-You'll build a minimal cross-platform experience for browsing and "booking" pets available for swapping/sitting. The goal is to showcase your frontend skills in both React Native and Next.js, your technical and product thinking, and your ability to communicate clearly.
+You'll build a minimal cross-platform experience for browsing and "booking" pets available for swapping/sitting. The goal is to showcase your frontend skills in one of or both React Native and Next.js, your technical and product thinking, and your ability to communicate clearly.
 
 ---
 
-## 🕐 Time Expectations
+## Time Expectations
 
-- **This should take you no more than 4 hours.**
+- **You should not spend more than 1-2 hours on this project.**
 - Please don't over-engineer or polish beyond that.
 - If you run over, just note what you'd do with more time in your submission.
 
 ---
 
-## 🚩 Requirements
+## Requirements
 
 ### **Functional**
 
@@ -50,15 +50,15 @@ You'll build a minimal cross-platform experience for browsing and "booking" pets
 
 ---
 
-## 🤖 About Using AI
+## About Using AI
 
 - You **may use AI/code assistants** to help you, but _you_ should own and understand all code.
-- Please note in your submission (in this README) if/where you used AI to assist.
-- Do not copy-paste full, unedited AI-generated screens or logic.
+- Please note in your submission if/where you used AI to assist.
+- Do not copy-paste full, unedited AI-generated screens or logic that you can not explain yourelf.
 
 ---
 
-## 📄 What to Submit
+## What to Submit
 
 - Push your code to your assignment repo.
 - **Update this README** with:
@@ -71,7 +71,7 @@ You'll build a minimal cross-platform experience for browsing and "booking" pets
 
 ---
 
-## 🏁 Getting Started
+## Getting Started
 
 ### **Install dependencies**
 
@@ -110,11 +110,9 @@ yarn start
 npm start
 ```
 
-This will start Expo—use your device or an emulator to test.
-
 ---
 
-## 📝 Please Include
+## Please Include
 
 - **Time spent:**
 - **Where/if you used AI/code assistants:**
@@ -124,4 +122,4 @@ This will start Expo—use your device or an emulator to test.
 ---
 
 **Thanks and have fun with it!**
-If you get stuck or have questions, please email [interview@kindred.com](mailto:interview@kindred.com) (fictional).
+If you get stuck or have questions, don't hesitate to reach out to your recruiter.
