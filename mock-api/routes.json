@@ -1,0 +1,4 @@
+{
+  "/api/pets": "/pets",
+  "/api/book/:petId": "/pets/:petId"
+}

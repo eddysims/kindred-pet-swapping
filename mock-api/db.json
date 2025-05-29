@@ -1,0 +1,52 @@
+{
+  "pets": [
+    {
+      "id": "1",
+      "name": "Mr. Fluffers",
+      "species": "Cat",
+      "city": "Austin",
+      "photoUrl": "https://placehold.co/400x300?text=Cat",
+      "status": "available"
+    },
+    {
+      "id": "2",
+      "name": "Bark Twain",
+      "species": "Dog",
+      "city": "Denver",
+      "photoUrl": "https://placehold.co/400x300?text=Dog",
+      "status": "booked"
+    },
+    {
+      "id": "3",
+      "name": "Fluffy McFluffface",
+      "species": "Rabbit",
+      "city": "Seattle",
+      "photoUrl": "https://placehold.co/400x300?text=Rabbit",
+      "status": "available"
+    },
+    {
+      "id": "4",
+      "name": "Captain Whiskers",
+      "species": "Cat",
+      "city": "New York",
+      "photoUrl": "https://placehold.co/400x300?text=Cat",
+      "status": "available"
+    },
+    {
+      "id": "5",
+      "name": "Sir Barksalot",
+      "species": "Dog",
+      "city": "Chicago",
+      "photoUrl": "https://placehold.co/400x300?text=Dog",
+      "status": "booked"
+    },
+    {
+      "id": "6",
+      "name": "Hootie",
+      "species": "Owl",
+      "city": "Portland",
+      "photoUrl": "https://placehold.co/400x300?text=Owl",
+      "status": "available"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "kindred-take-home-pet-swapping",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "web",
+    "mobile",
+    "mock-api"
+  ],
+  "scripts": {
+    "web": "yarn workspace web dev",
+    "mobile": "yarn workspace mobile start",
+    "api": "yarn workspace mock-api start",
+    "start": "concurrently \"yarn api\" \"yarn web\"",
+    "install:all": "yarn install"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

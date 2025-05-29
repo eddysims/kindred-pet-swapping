@@ -1,0 +1,26 @@
+{
+  "expo": {
+    "name": "Pet Swap",
+    "slug": "pet-swap",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "pet-swap-app"
+      }
+    },
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
