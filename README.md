@@ -31,22 +31,6 @@ You'll build a minimal cross-platform experience for browsing and "booking" pets
 
    - Allow users to "Book" an available pet.
    - Simulate booking with `POST /api/book/:petId` (just fake the call and update UI).
-   - Show a success message and prevent double-booking.
-
-3. **Responsiveness & Usability**
-
-   - The web view should be mobile responsive.
-   - The mobile app should feel native.
-   - Add **1 meaningful UX/UI enhancement** of your choice (eg. loading skeleton, nice transitions, etc.).
-
-### **Technical**
-
-- Use **TypeScript** throughout.
-- Use a modern React stack: Expo for mobile, Next.js for web.
-- Minimize boilerplate—focus on essentials.
-- Include **unit tests for a core logic module** (your choice).
-- Show how you'd organize code for scaling.
-- Provide **clear run instructions** in this README.
 
 ---
 
@@ -68,6 +52,8 @@ You'll build a minimal cross-platform experience for browsing and "booking" pets
   - Where/if you used AI.
   - How to run both web and mobile apps.
   - (If needed) What you'd do with more time.
+ 
+- Optional: You may submit a screenshare walkthrough of your code if you'd prefer.
 
 ---
 
