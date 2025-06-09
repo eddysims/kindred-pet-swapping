@@ -7,19 +7,8 @@ interface PetCardProps {
 }
 
 const PetCard: React.FC<PetCardProps> = ({ pet, onBook }) => {
-  const [isBooking, setIsBooking] = useState(false);
-  const [bookingSuccess, setBookingSuccess] = useState(false);
-
   const handleBook = async () => {
-    setIsBooking(true);
-    try {
-      await onBook(pet.id);
-      setBookingSuccess(true);
-    } catch (error) {
-      console.error("Failed to book pet:", error);
-    } finally {
-      setIsBooking(false);
-    }
+    // TODO: Implement booking logic
   };
 
   return (
@@ -47,20 +36,13 @@ const PetCard: React.FC<PetCardProps> = ({ pet, onBook }) => {
           )}
         </div>
 
-        {pet.status === "available" && !bookingSuccess && (
+        {pet.status === "available" && (
           <button
             onClick={handleBook}
-            disabled={isBooking}
             className="mt-4 w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-md disabled:opacity-50"
           >
-            {isBooking ? "Booking..." : "Book Now"}
+            Book Now
           </button>
-        )}
-
-        {bookingSuccess && (
-          <div className="mt-4 text-green-600 font-medium">
-            Booking successful! 🎉
-          </div>
         )}
       </div>
     </div>

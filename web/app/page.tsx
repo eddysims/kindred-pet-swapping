@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import PetCard from "@/components/PetCard";
 import { Pet } from "@types";
 
@@ -53,8 +54,16 @@ export default function Home() {
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-100 p-4">
+        <nav className="flex justify-between items-center mb-6 gap-4">
+          <Image
+            src="/assets/kindred_logo.png"
+            alt="Kindred Logo"
+            width={120}
+            height={28}
+          />
+          <h1 className="text-3xl font-bold">Pet Swap</h1>
+        </nav>
         <div className="container mx-auto">
-          <h1 className="text-3xl font-bold mb-6">Pet Swap</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[...Array(6)].map((_, index) => (
               <div
@@ -78,8 +87,16 @@ export default function Home() {
   if (error) {
     return (
       <div className="min-h-screen bg-gray-100 p-4">
+        <nav className="flex justify-between items-center mb-6 gap-4">
+          <Image
+            src="/assets/kindred_logo.png"
+            alt="Kindred Logo"
+            width={120}
+            height={28}
+          />
+          <h1 className="text-3xl font-bold">Pet Swap</h1>
+        </nav>
         <div className="container mx-auto">
-          <h1 className="text-3xl font-bold mb-6">Pet Swap</h1>
           <div
             className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
             role="alert"
@@ -93,9 +110,17 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
+    <div className="min-h-screen bg-gray-100 p-4 w-full">
+      <nav className="flex gap-12 items-center m-6">
+        <Image
+          src="/assets/kindred_logo.png"
+          alt="Kindred Logo"
+          width={120}
+          height={28}
+        />
+        <h1 className="text-3xl font-bold">Pet Swap</h1>
+      </nav>
       <div className="container mx-auto">
-        <h1 className="text-3xl font-bold mb-6">Pet Swap</h1>
         <p className="mb-6">
           Find pets available for swapping or book your next pet-sitting
           adventure!

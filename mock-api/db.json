@@ -5,7 +5,7 @@
       "name": "Mr. Fluffers",
       "species": "Cat",
       "city": "Austin",
-      "photoUrl": "https://placehold.co/400x300?text=Cat",
+      "photoUrl": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=2043&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "status": "available"
     },
     {
@@ -13,15 +13,15 @@
       "name": "Bark Twain",
       "species": "Dog",
       "city": "Denver",
-      "photoUrl": "https://placehold.co/400x300?text=Dog",
+      "photoUrl": "https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "status": "booked"
     },
     {
       "id": "3",
       "name": "Fluffy McFluffface",
-      "species": "Rabbit",
+      "species": "Cat",
       "city": "Seattle",
-      "photoUrl": "https://placehold.co/400x300?text=Rabbit",
+      "photoUrl": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "status": "available"
     },
     {
@@ -29,7 +29,7 @@
       "name": "Captain Whiskers",
       "species": "Cat",
       "city": "New York",
-      "photoUrl": "https://placehold.co/400x300?text=Cat",
+      "photoUrl": "https://images.unsplash.com/photo-1574144611937-0df059b5ef3e?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "status": "available"
     },
     {
@@ -37,16 +37,8 @@
       "name": "Sir Barksalot",
       "species": "Dog",
       "city": "Chicago",
-      "photoUrl": "https://placehold.co/400x300?text=Dog",
+      "photoUrl": "https://images.unsplash.com/photo-1546238232-20216dec9f72?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "status": "booked"
-    },
-    {
-      "id": "6",
-      "name": "Hootie",
-      "species": "Owl",
-      "city": "Portland",
-      "photoUrl": "https://placehold.co/400x300?text=Owl",
-      "status": "available"
     }
   ]
 }
