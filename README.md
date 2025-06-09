@@ -7,6 +7,8 @@ This is meant to simulate a real (but lighthearted) Kindred product experience, 
 
 You'll extend a minimal experience for browsing and "booking" pets available for swapping/sitting. The goal is to showcase your frontend skills, your technical and product thinking, and your ability to communicate clearly.
 
+You'll find boilerplate already in place for simple feed of pets - your task is to improve on what is there and make it your own. That might mean showing off your UI/UX skills and improving the existing feed, adding a new feature or screen, or even simply improving the organization and structure of the project. There's no right answer here, just an opportunity to show us your skills and what you are passionate about.
+
 ---
 
 ## Time Expectations
