@@ -5,7 +5,7 @@ This is meant to simulate a real (but lighthearted) Kindred product experience, 
 
 ## Project Brief
 
-You'll build a minimal cross-platform experience for browsing and "booking" pets available for swapping/sitting. The goal is to showcase your frontend skills in one of or both React Native and Next.js, your technical and product thinking, and your ability to communicate clearly.
+You'll extend a minimal experience for browsing and "booking" pets available for swapping/sitting. The goal is to showcase your frontend skills, your technical and product thinking, and your ability to communicate clearly.
 
 ---
 
@@ -50,9 +50,8 @@ You'll build a minimal cross-platform experience for browsing and "booking" pets
   - Your approach and any tradeoffs.
   - Time spent.
   - Where/if you used AI.
-  - How to run both web and mobile apps.
   - (If needed) What you'd do with more time.
- 
+
 - Optional: You may submit a screenshare walkthrough of your code if you'd prefer.
 
 ---
@@ -86,24 +85,6 @@ yarn dev
 # or
 npm run dev
 ```
-
-### **Run the Mobile App**
-
-```bash
-cd mobile
-yarn start
-# or
-npm start
-```
-
----
-
-## Please Include
-
-- **Time spent:**
-- **Where/if you used AI/code assistants:**
-- **If I had more time, I'd...**
-- **Anything else you want us to know:**
 
 ---
 

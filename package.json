@@ -9,7 +9,6 @@
   ],
   "scripts": {
     "web": "yarn workspace web dev",
-    "mobile": "yarn workspace mobile start",
     "api": "yarn workspace mock-api start",
     "start": "concurrently \"yarn api\" \"yarn web\"",
     "install:all": "yarn install"
