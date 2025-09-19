@@ -44,12 +44,20 @@ export default function Home() {
     try {
       // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 500));
+      const response = await fetch(`/api/book/${petId}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ status: "booked" }),
+      });
 
-      // Update local state
+      if (!response.ok) {
+        throw new Error("Failed to book pet");
+      }
+
+      const data = await response.json();
+
       setPets((prevPets) =>
-        prevPets.map((pet) =>
-          pet.id === petId ? { ...pet, status: "booked" } : pet
-        )
+        prevPets.map((pet) => (pet.id === petId ? data : pet))
       );
 
       return true;
@@ -63,10 +71,13 @@ export default function Home() {
     return (
       <div>
         <PageTitle
-          title="Pet Swap"
+          title="Kindred pets in all cities"
           description="Find pets available for swapping or book your next pet-sitting adventure!"
         />
-        <Container className="container mx-auto">
+        <Container className="container mx-auto pb-14">
+          <div className="mb-10">
+            <PetFilter />
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-18">
             {[...Array(6)].map((_, index) => (
               <div className="bg-background" key={index}>
@@ -123,7 +134,7 @@ export default function Home() {
         description="Find pets available for swapping or book your next pet-sitting adventure!"
       />
 
-      <Container className="container mx-auto">
+      <Container className="container mx-auto pb-14">
         <div className="mb-10">
           <PetFilter />
         </div>
