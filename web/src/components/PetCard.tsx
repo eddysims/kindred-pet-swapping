@@ -1,7 +1,19 @@
 import type { Pet } from "@types";
 import type React from "react";
-
+import Image from "next/image";
 import { toast } from "sonner";
+import { Cat, Dog, MapPin, PawPrint } from "lucide-react";
+
+import {
+  Card,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 interface PetCardProps {
   pet: Pet;
@@ -19,42 +31,70 @@ const PetCard: React.FC<PetCardProps> = ({ pet, onBook }) => {
     }
   };
 
-  return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden">
-      <img
-        src={pet.photoUrl}
-        alt={`${pet.name} - ${pet.species}`}
-        className="w-full h-48 object-cover"
-      />
-      <div className="p-4">
-        <h2 className="text-xl font-semibold">{pet.name}</h2>
-        <p className="text-gray-600">
-          {pet.species} • {pet.city}
-        </p>
+  const isAvailable = pet.status === "available";
+  const isDog = pet.species.toLowerCase() === "dog";
+  const isCat = pet.species.toLowerCase() === "cat";
 
-        <div className="mt-2">
-          {pet.status === "available" ? (
-            <span className="inline-block bg-green-100 text-green-800 px-2 py-1 rounded text-sm">
-              Available
-            </span>
-          ) : (
-            <span className="inline-block bg-red-100 text-red-800 px-2 py-1 rounded text-sm">
-              Booked
-            </span>
+  return (
+    <Card>
+      <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+        <Image
+          src={pet.photoUrl}
+          alt={`${pet.name} - ${pet.species}`}
+          fill
+          className="object-cover"
+        />
+        <Badge
+          variant="secondary"
+          className="absolute bottom-1 left-1 inline-flex gap-2 rounded-full"
+        >
+          <MapPin className="size-4" />
+          {pet.city}
+        </Badge>
+      </div>
+
+      <CardHeader className="px-2 my-6 flex items-center gap-4">
+        <div
+          aria-label={pet.species}
+          className="size-12 rounded-full bg-muted inline-flex items-center justify-center text-muted-foreground"
+        >
+          {isDog && <Dog className="size-6" data-testid="pet-icon" />}
+          {isCat && <Cat className="size-6" data-testid="pet-icon" />}
+          {!isDog && !isCat && (
+            <PawPrint className="size-6" data-testid="pet-icon" />
           )}
         </div>
-
-        {pet.status === "available" && (
-          <button
-            type="button"
-            onClick={handleBook}
-            className="mt-4 w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-md disabled:opacity-50"
-          >
-            Book Now
-          </button>
-        )}
-      </div>
-    </div>
+        <div className="space-y-px">
+          <CardTitle>{pet.name}</CardTitle>
+          <CardDescription>
+            <div
+              className={cn(
+                "flex items-center gap-2",
+                isAvailable ? "text-green-600" : "text-muted-foreground"
+              )}
+            >
+              <span className="relative flex size-2">
+                {isAvailable && (
+                  <span className="absolute size-full animate-ping rounded-full bg-current opacity-75" />
+                )}
+                <span
+                  className={cn(
+                    "size-2 rounded-full",
+                    isAvailable ? "bg-current" : "bg-muted-foreground"
+                  )}
+                />
+              </span>
+              {pet.status === "available" ? "Available" : "Booked"}
+            </div>
+          </CardDescription>
+        </div>
+      </CardHeader>
+      <CardFooter className="grid mt-auto border-t pt-6">
+        <Button onClick={handleBook} disabled={pet.status !== "available"}>
+          Book Now
+        </Button>
+      </CardFooter>
+    </Card>
   );
 };
 
