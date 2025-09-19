@@ -40,7 +40,7 @@ You'll find boilerplate already in place for simple feed of pets - your task is 
 
 - You **may use AI/code assistants** to help you, but _you_ should own and understand all code.
 - Please note in your submission if/where you used AI to assist.
-- Do not copy-paste full, unedited AI-generated screens or logic that you can not explain yourelf.
+- Do not copy-paste full, unedited AI-generated screens or logic that you can not explain yourself.
 
 ---
 
@@ -92,3 +92,55 @@ npm run dev
 
 **Thanks and have fun with it!**
 If you get stuck or have questions, don't hesitate to reach out to your recruiter.
+
+# Eddy's take home assignment
+
+**Total time spent**: 2 hours, 2 min
+
+## Approach
+
+- When I started the project, I had noticed that Tailwind was not working, and the test suites were failing to run. My first steps were to fix that by updating tailwind, adding the types for jest and changing the jest config to use `babel-jest` instead of `ts-jest`. While I was at it I also update Next and React to the latest versions.
+
+- After that, I reorganized the directory. This was for organization purposes only, as I think that it is easier to understand a Next project when your source files are in a `src` directory.
+
+- My next steps were to make sure that all of the tests passed. I noticed that there were 2 tests failing in the `PetCard.test.tsx` file. Both around the booking feature.
+
+  - I set up the booking feature using the current implementation which allowed for the pet to be booked.
+  - I then installed Shadcn and used the `sonner` component to display a toast message when the pet was booked.
+    - I decided to use Shadcn for speed, I didnt want to spend too much time on simple UI components, and knew that I could get the aesthetic I wanted with Shadcn.
+    - If I had more time, I would like to add a loading state to the "Book now" button to show that something is happening.
+
+- After having all of the tests pass, I moved the `Navigation` to the `layout` component. This not only allowed for more simple consistency going forward, but also allowed the `Navigation` to be server rendered without needing to change the whole `page` component to a server component.
+
+  - I also added a simple `PageTitle` component here to again be more consistent between states.
+  - I had also planned to make each pet its own details page if I had time, and would have been able to use the `PageTitle` component there as well.
+
+- Next I worked on giving the `PetCard` a new look. While I dont think that there was anything wrong with the initial one, I wanted to give the project a little bit of a more personal look and feel. I used the [Browse](https://livekindred.com/browse/all-destinations) page as inspiration, with a few ideas that I had while working on the app.
+
+  - During this work, I used the `yarn workspace web test:watch` command to make sure that any tests that broke due to my work were fixed.
+  - I also added new tests related to displaying the correct icon for a pet.
+
+- After that I wanted to add a feature that I hoped was unique, I used [Nuqs](https://nuqs.dev/) to allow filtering of pets.
+
+  - I added hardcoded filters for species and to only show available pets
+  - I stored the filters state in the URL, so that filtered URLs could be sharable. Example http://localhost:3000/?showAvailable=true
+
+- Finally, as I was doing cleanup, I realized that I forgot to send the `POST` request as directed, so I added that final feature.
+  - In this, I did notice that I was getting a 404 on a `POST` request, but was able to send a `PATCH` that updated the database.
+
+## AI Usage
+
+For this, I felt like it was a pretty simple project and I didn't really use AI too much other than using the tab completion in Cursor. Here are the areas that I did use AI for and why:
+
+- Testing the **Book Now** feature. I used AI to quickly remind myself how to test the `sonner` component from Shadcn
+- Tests for the `PetFilters` component. I found that I was running out of time and asked Cursor to write me a set of unit tests for the `PetFilters` component. From there I removed all of the tests that I found useless, and cleaned up the other tests to ensure that they were in fact testing what I wanted.
+
+## If I had more time
+
+Here are a list of things that I would like to do if I had more time:
+
+- Loading state on the button to show that something is happening when you hit "Book Now"
+- Empty state for if you filter yourself down to 0 pets
+- Come up with a nicer design for the filters.
+- I wanted to move the fetch call to the server and have everything other then the "Book Now" button server rendered
+- I wanted to create each pet it's own details page
