@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import PetCard from "@/components/PetCard";
 import type { Pet } from "@types";
+import { PageTitle } from "@/components/ui/PageTitle";
+import { Container } from "@/components/ui/Container";
 
 export default function Home() {
   const [pets, setPets] = useState<Pet[]>([]);
@@ -53,17 +54,12 @@ export default function Home() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-100 p-4">
-        <nav className="flex justify-between items-center mb-6 gap-4">
-          <Image
-            src="/assets/kindred_logo.png"
-            alt="Kindred Logo"
-            width={120}
-            height={28}
-          />
-          <h1 className="text-3xl font-bold">Pet Swap</h1>
-        </nav>
-        <div className="container mx-auto">
+      <div>
+        <PageTitle
+          title="Pet Swap"
+          description="Find pets available for swapping or book your next pet-sitting adventure!"
+        />
+        <Container className="container mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[...Array(6)].map((_, index) => (
               <div
@@ -79,24 +75,19 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
+        </Container>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gray-100 p-4">
-        <nav className="flex justify-between items-center mb-6 gap-4">
-          <Image
-            src="/assets/kindred_logo.png"
-            alt="Kindred Logo"
-            width={120}
-            height={28}
-          />
-          <h1 className="text-3xl font-bold">Pet Swap</h1>
-        </nav>
-        <div className="container mx-auto">
+      <div>
+        <PageTitle
+          title="Pet Swap"
+          description="Find pets available for swapping or book your next pet-sitting adventure!"
+        />
+        <Container className="container mx-auto">
           <div
             className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
             role="alert"
@@ -104,34 +95,24 @@ export default function Home() {
             <strong className="font-bold">Error: </strong>
             <span className="block sm:inline">{error}</span>
           </div>
-        </div>
+        </Container>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 p-4 w-full">
-      <nav className="flex gap-12 items-center m-6">
-        <Image
-          src="/assets/kindred_logo.png"
-          alt="Kindred Logo"
-          width={120}
-          height={28}
-        />
-        <h1 className="text-3xl font-bold">Pet Swap</h1>
-      </nav>
-      <div className="container mx-auto">
-        <p className="mb-6">
-          Find pets available for swapping or book your next pet-sitting
-          adventure!
-        </p>
-
+    <div>
+      <PageTitle
+        title="Kindred pets in all cities"
+        description="Find pets available for swapping or book your next pet-sitting adventure!"
+      />
+      <Container className="container mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {pets.map((pet) => (
             <PetCard key={pet.id} pet={pet} onBook={handleBookPet} />
           ))}
         </div>
-      </div>
+      </Container>
     </div>
   );
 }

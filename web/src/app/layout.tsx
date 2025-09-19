@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import { Toaster } from "@/components/ui/sonner";
+import { Navigation } from "@/components/Navigation";
 
 import type { Metadata } from "next";
 
@@ -16,7 +17,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="min-h-dvh flex flex-col">
+        <Navigation />
         {children}
         <Toaster richColors />
       </body>
