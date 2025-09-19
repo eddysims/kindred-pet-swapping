@@ -53,7 +53,7 @@ const PetCard: React.FC<PetCardProps> = ({ pet, onBook }) => {
         </Badge>
       </div>
 
-      <CardHeader className="px-2 my-6 flex items-center gap-4">
+      <CardHeader className="my-6 flex items-center gap-4">
         <div
           aria-label={pet.species}
           className="size-12 rounded-full bg-muted inline-flex items-center justify-center text-muted-foreground"

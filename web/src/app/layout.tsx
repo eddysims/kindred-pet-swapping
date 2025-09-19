@@ -1,9 +1,9 @@
 import "./globals.css";
 
-import { Toaster } from "@/components/ui/sonner";
 import { Navigation } from "@/components/Navigation";
 
 import type { Metadata } from "next";
+import { Providers } from "@/app/providers";
 
 export const metadata: Metadata = {
   title: "Pet Swap - Find Your Perfect Pet-Sitting Match",
@@ -18,9 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-dvh flex flex-col">
-        <Navigation />
-        {children}
-        <Toaster richColors />
+        <Providers>
+          <Navigation />
+          {children}
+        </Providers>
       </body>
     </html>
   );

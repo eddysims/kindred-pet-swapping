@@ -1,10 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useQueryState, parseAsString, parseAsBoolean } from "nuqs";
+
 import PetCard from "@/components/PetCard";
 import { PageTitle } from "@/components/ui/PageTitle";
 import { Container } from "@/components/ui/Container";
 import { Skeleton } from "@/components/ui/skeleton";
+import { PetFilter } from "@/components/PetFilter";
 
 import type { Pet } from "@types";
 
@@ -12,6 +15,8 @@ export default function Home() {
   const [pets, setPets] = useState<Pet[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [filterBy] = useQueryState("filterBy", parseAsString);
+  const [showAvailable] = useQueryState("showAvailable", parseAsBoolean);
 
   useEffect(() => {
     const fetchPets = async () => {
@@ -107,15 +112,23 @@ export default function Home() {
     );
   }
 
+  const filteredPets = pets
+    .filter((pet) => (filterBy ? pet.species.toLowerCase() === filterBy : true))
+    .filter((pet) => (showAvailable ? pet.status === "available" : true));
+
   return (
     <div>
       <PageTitle
         title="Kindred pets in all cities"
         description="Find pets available for swapping or book your next pet-sitting adventure!"
       />
+
       <Container className="container mx-auto">
+        <div className="mb-10">
+          <PetFilter />
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-18">
-          {pets.map((pet) => (
+          {filteredPets.map((pet) => (
             <PetCard key={pet.id} pet={pet} onBook={handleBookPet} />
           ))}
         </div>
