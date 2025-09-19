@@ -1,14 +1,22 @@
-import { Pet } from "@types";
-import React, { useState } from "react";
+import type { Pet } from "@types";
+import type React from "react";
+
+import { toast } from "sonner";
 
 interface PetCardProps {
   pet: Pet;
-  onBook: (petId: string) => void;
+  onBook: (petId: string) => Promise<boolean>;
 }
 
 const PetCard: React.FC<PetCardProps> = ({ pet, onBook }) => {
   const handleBook = async () => {
-    // TODO: Implement booking logic
+    const response = await onBook(pet.id);
+
+    if (response) {
+      toast.success("Booking successful! 🎉");
+    } else {
+      toast.error("Failed to book pet");
+    }
   };
 
   return (
@@ -38,6 +46,7 @@ const PetCard: React.FC<PetCardProps> = ({ pet, onBook }) => {
 
         {pet.status === "available" && (
           <button
+            type="button"
             onClick={handleBook}
             className="mt-4 w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-md disabled:opacity-50"
           >

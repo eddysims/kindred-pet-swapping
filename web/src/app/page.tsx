@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import PetCard from "@/components/PetCard";
-import { Pet } from "@types";
+import type { Pet } from "@types";
 
 export default function Home() {
   const [pets, setPets] = useState<Pet[]>([]);

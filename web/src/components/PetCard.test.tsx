@@ -3,7 +3,8 @@ import { render } from "@testing-library/react";
 import { fireEvent } from "@testing-library/dom";
 import "@testing-library/jest-dom";
 import PetCard from "./PetCard";
-import { Pet, PetStatus } from "@/types";
+import type { Pet, PetStatus } from "@types";
+import { Toaster } from "@/components/ui/sonner";
 
 describe("PetCard Component", () => {
   const mockPet: Pet = {
@@ -19,6 +20,7 @@ describe("PetCard Component", () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
+    render(<Toaster />);
   });
 
   it("renders pet information correctly", () => {
